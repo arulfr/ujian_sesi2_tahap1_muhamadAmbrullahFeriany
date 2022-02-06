@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+            <div class="card-header">
+            <h3 class="card-title">Tambah Obat</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form method="post" action="<%= data.length != 0 ? '/dokter/obat_update': '/dokter/obat_tambah' %>">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Nama Obat :</label>
+                                <input type="text" class="form-control" name="nama_obat" maxlength="10" value="<%= data.length != 0 ? data.nama_obat : '' %>" placeholder="Nama Obat">
+                                <input type="hidden" class="form-control" name="id_obat" maxlength="10" value="<%= data.length != 0 ? data.id_obat : '' %>" placeholder="id obat">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Harga Jual :</label>
+                                <input type="number" class="form-control" maxlength="10" minlength="0" name="harga_jual" value="<%= data.length != 0 ? data.harga_jual : '' %>" placeholder="Harga Jual">                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Harga Beli :</label>
+                                <input type="number" class="form-control" maxlength="10" minlength="0" name="harga_beli" value="<%= data.length != 0 ? data.harga_beli : '' %>" placeholder="Harga Beli">                            </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+const pasien = require('./pasien');
+const catatan_medis = require('./catatan_medis');
+const dokter = require('./dokter');
+const data_penyakit= require('./data_penyakit');
+const pemeriksaan = require('./pemeriksaan');
+const obat = require('./obat');
+const obat_masuk = require('./obat_masuk');
+const obat_keluar = require('./obat_keluar');
+const transaksi = require('./transaksi');
+const model = {};
+
+model.pasien = pasien;
+model.catatan_medis = catatan_medis;
+model.dokter = dokter;
+model.data_penyakit = data_penyakit;
+model.pemeriksaan = pemeriksaan;
+model.obat = obat;
+model.obat_masuk = obat_masuk;
+model.obat_keluar= obat_keluar;
+model.transaksi = transaksi;
+module.exports = model;

@@ -1,0 +1,81 @@
+<aside class="main-sidebar sidebar-light-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="/assets/index3.html" class="brand-link">
+    <!-- <img src="/assets/dist/img/AdminLTELogo.png"
+         alt="AdminLTE Logo"
+         class="brand-image img-circle elevation-3"
+         style="opacity: .8"> -->
+    <span class="brand-text font-weight-light">Menu</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user (optional) -->
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      
+
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+        <li class="nav-item">
+          <a  href="/dokter" class="nav-link">
+            <i class="nav-icon fas fa-home"></i>
+            <p>
+              Home
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Master
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/dokter/obat_data" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Obat</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+              Manage
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/dokter/pasien_data" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data pasien</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/dokter/transaksi_data" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Transaksi</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <form action="/dokter/logout" method="post">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            <button class="btn btn-light btn-block">Logout</button>
+          </form>
+      </li>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>

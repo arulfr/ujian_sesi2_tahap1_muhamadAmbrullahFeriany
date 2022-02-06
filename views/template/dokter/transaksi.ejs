@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+            <div class="card-header">
+            <h3 class="card-title">Transaksi</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form method="post" action="/dokter/transaksi_tambah">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Pilih Obat :</label>
+                                <select name="id_obat" class="form-control" id="">
+                                    <% obat.forEach(index => { %>
+                                        <option value="<%= index.id_obat %>"><%= index.nama_obat %></option>
+                                    <% }); %>
+                                </select>
+                                <input type="hidden" class="form-control" name="id_pemeriksaan" maxlength="10" value="<%= id_pemeriksaan %>" placeholder="id pemeriksaan">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Jumlah obat :</label>
+                                <input type="number" class="form-control" maxlength="200" minlength="0" name="jumlah" value="" placeholder="Jumlah">                            
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>harga obat :</label>
+                                <input type="number" class="form-control" maxlength="200" minlength="0" name="harga_obat" value="" placeholder="Harga Obat">                            
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>harga Pemeriksaan :</label>
+                                <input type="number" class="form-control" maxlength="200" minlength="0" name="harga_pemeriksaan" value="" placeholder="Harga Pemeriksaan">                             
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tgl Transaksi :</label>
+                                <input type="date" class="form-control" maxlength="200" minlength="0" name="tgl_transaksi" value="" placeholder="Harga Pemeriksaan">                             
+                            </div>
+                        </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

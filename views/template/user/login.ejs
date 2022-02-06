@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <%- include('../head.ejs'); %>
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <h3>LOGIN PASIEN</h3>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
+      <% if (errorMessage) { %>
+        <div class="alert alert-danger"><%= errorMessage %></div>
+      <% } %>
+      <% if (successMessage) { %>
+        <div class="alert alert-success"><%= successMessage %></div>
+      <% } %>
+      <form action="/login" method="post">
+        <div class="input-group mb-3">
+          <input type="text" name="email" class="form-control" placeholder="email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" name="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+      <!-- /.social-auth-links -->
+      <p class="mb-0 text-center" style="margin-top:20px">
+        <a href="/register" style="text-align: center;" class="text-center">Register Disini</a>
+      </p>
+      <!-- <p class="mb-0 text-center" style="margin-top:20px">
+        <a href="/lupa_password" style="text-align: center;" class="text-center">Lupa Password</a>
+      </p> -->
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+<!-- /.login-box -->
+
+<%- include('../footer.ejs'); %>
+</body>
+</html>

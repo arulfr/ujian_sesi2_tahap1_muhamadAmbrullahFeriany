@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Rekam Medis</h3>
+    </div>
+  <div class="card-body">
+      <table id="example1" class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>Keluhan</th>
+                <th>Diagnosa</th>
+                <th>Tanggal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let no=1; data.forEach(index => { %>
+              <tr>
+                <td><%= no %></td>
+                <td><%= index.keluhan %></td>
+                <td><%= index.diagnosa %></td>
+                <td><%= index.tgl_catatan.split('-').reverse().join('-') %></td>
+              </tr>
+              <% no++; }); %>
+            </tbody>
+        </table>
+      </div>
+  </div>
+  <!-- /.content -->
+  

@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Rekam Medis</h3>
+      <div class="float-right">
+          <a class="btn btn-app" href="/dokter/rekam_medis_tambah/<%= id_pasien %>">
+            <i class="fas fa-plus"></i> Tambah Rekam Medis
+          </a>
+      </div>
+    </div>
+  <div class="card-body">
+      <table id="example1" class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>Keluhan</th>
+                <th>Diagnosa</th>
+                <th>Tanggal</th>
+                <th>Delete</th>
+                <th>Edit</th>
+                <th>Input Pemeriksaan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let no=1; data.forEach(index => { %>
+              <tr>
+                <td><%= no %></td>
+                <td><%= index.keluhan %></td>
+                <td><%= index.diagnosa %></td>
+                <td><%= index.tgl_catatan.split('-').reverse().join('-') %></td>
+                <td><a href="/dokter/rekam_medis_delete/<%= index.id_catatan_medis %>">
+                    <button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+                </td>
+                <td>
+                  <a href="/dokter/rekam_medis_update/<%= index.id_catatan_medis %>">
+                  <button class="btn btn-primary"><i class="fa fa-pencil-alt"></i></button></a>
+                </td>
+                <td>
+                    <a href="/dokter/pemeriksaan_input/<%= index.id_catatan_medis %>">
+                    <button class="btn btn-success"><i class="fa fa-stethoscope"></i></button></a>
+                  </td>
+              </tr>
+              <% no++; }); %>
+            </tbody>
+        </table>
+      </div>
+  </div>
+  <!-- /.content -->
+  

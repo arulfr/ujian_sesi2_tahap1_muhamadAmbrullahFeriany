@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+            <div class="card-header">
+            <h3 class="card-title">Rekam Medis</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form method="post" action="<%= data.length != 0 ? '/dokter/rekam_medis_update': '/dokter/rekam_medis_tambah' %>"">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Keluhan :</label>
+                                <input type="text" class="form-control" name="keluhan" value="<%= data.length != 0 ? data.keluhan : '' %>" maxlength="50" placeholder="Keluhan">
+                                <% if(id_pasien != undefined){ %>
+                                <input type="hidden" class="form-control" name="id_pasien" maxlength="10" value="<%= id_pasien %>" placeholder="id catatan pasien">
+                                <% } %>
+                                <input type="hidden" class="form-control" name="id_catatan_medis" maxlength="10" value="<%= id_catatan_medis %>" placeholder="id catatan pasien">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Diagnosa :</label>
+                                <input type="text" class="form-control" maxlength="200" minlength="0" name="diagnosa" value="<%= data.length != 0 ? data.diagnosa : '' %>" placeholder="Diagnosa">                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tanggal :</label>
+                                <input type="date" class="form-control" name="tgl_catatan" placeholder="Tanggal" value="<%= data.length != 0 ? data.tgl_catatan : '' %>" placeholder="Harga Beli">                            </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

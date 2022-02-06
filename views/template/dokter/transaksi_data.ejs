@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Data Transaksi</h3>
+    </div>
+  <div class="card-body">
+      <table id="example1" class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>nama obat</th>
+                <th>tgl pemeriksaan</th>
+                <th>tgl transaksi</th>
+                <th>Harga Obat</th>
+                <th>Harga pemeriksaan</th>
+                <th>Total harga</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let no=1; data.forEach(index => { %>
+              <tr>
+                <td><%= no %></td>
+                <td><%= index.obat[0].nama_obat %></td>
+                <td><%= index.pemeriksaan[0].tgl_pemeriksaan.split('-').reverse().join('-')  %></td>
+                <td><%= index.tgl_transaksi.split('-').reverse().join('-') %></td>
+                <td><%= index.harga_obat %></td>
+                <td><%= index.harga_pemeriksaan %></td>
+                <td><%= parseInt(index.harga_obat)+parseInt(index.harga_pemeriksaan) %></td>
+              </tr>
+              <% no++; }); %>
+            </tbody>
+        </table>
+      </div>
+  </div>
+  <!-- /.content -->
+  

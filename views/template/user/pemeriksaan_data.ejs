@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Data Pasien</h3>
+    </div>
+  <div class="card-body">
+      <table id="example1" class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>Keluhan</th>
+                <th>Diagnosa</th>
+                <th>tinggi badan</th>
+                <th>Berat badan</th>
+                <th>Tekanan Darah</th>
+                <th>Kesimpulan</th>
+                <th>Tgl Pemeriksaan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let no=1; data.forEach(index => {  %>
+              <tr>
+                <td><%= no %></td>
+                <td><%= index.keluhan %></td>
+                <td><%= index.diagnosa %></td>
+                <td><%= index.pemeriksaan[0].tinggi_badan %></td>
+                <td><%= index.pemeriksaan[0].berat_badan %></td>
+                <td><%= index.pemeriksaan[0].tekanan_darah %></td>
+                <td><%= index.pemeriksaan[0].kesimpulan %></td>
+                <td><%= index.pemeriksaan[0].tgl_pemeriksaan %></td>
+              </tr>
+              <% no++; }); %>
+            </tbody>
+        </table>
+      </div>
+  </div>

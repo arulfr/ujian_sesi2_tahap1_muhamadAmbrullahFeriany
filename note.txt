@@ -1,0 +1,1 @@
+sebelum running jalankan dlu => npm install , di terminal

@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Data Obat</h3>
+      <div class="float-right">
+          <a class="btn btn-app" href="/dokter/obat_tambah">
+            <i class="fas fa-plus"></i> Obat
+          </a>
+      </div>
+    </div>
+  <div class="card-body">
+      <table id="example1" class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>Nama Obat</th>
+                <th>Jumlah</th>
+                <th>Harga jual</th>
+                <th>Harga Beli</th>
+                <th>Tambah Stok Obat</th>
+                <!-- <th>Delete</th>
+                <th>Edit</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <% let no=1; data.forEach(index => { %>
+              <tr>
+                <td><%= no %></td>
+                <td><%= index.nama_obat %></td>
+                <td><%= index.jumlah %></td>
+                <td><%= index.harga_jual %></td>
+                <td><%= index.harga_beli %></td>
+                <td>
+                    <a href="/dokter/obat_masuk_tambah/<%= index.id_obat %>">
+                    <button class="btn btn-primary"><i class="fa fa-plus"></i></button></a>
+                </td>
+              </tr>
+              <% no++; }); %>
+            </tbody>
+        </table>
+      </div>
+  </div>
+  <!-- /.content -->
+  

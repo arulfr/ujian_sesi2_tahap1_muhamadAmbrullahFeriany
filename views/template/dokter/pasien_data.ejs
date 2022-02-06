@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Data Pasien</h3>
+    </div>
+  <div class="card-body">
+      <table id="example1" class="table table-bordered table-striped">
+          <thead>
+              <tr>
+                <th style="width: 10px">#</th>
+                <th>Nama Pasien</th>
+                <th>email</th>
+                <th>Alamat</th>
+                <th>Telepon</th>
+                <th>Jenis Kelamin</th>
+                <th>Tempat Lahir</th>
+                <th>Tgl Lahir</th>
+                <th>Rekam Medis</th>
+                <th>Pemeriksaan Medis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let no=1; data.forEach(index => { let jenis_kelamin; index.jenis_kelamin == 1 ? jenis_kelamin = 'Laki-laki' : index.jenis_kelamin == 2 ? jenis_kelamin = 'Perempuan' : '';  %>
+              <tr>
+                <td><%= no %></td>
+                <td><%= index.nama %></td>
+                <td><%= index.email %></td>
+                <td><%= index.alamat %></td>
+                <td><%= index.telepon %></td>
+                <td><%= jenis_kelamin %></td>
+                <td><%= index.tempat_lahir %></td>
+                <td><%= index.tgl_lahir %></td>
+                <td>
+                    <a href="/dokter/rekam_medis/<%= index.id_pasien %>">
+                    <button class="btn btn-primary"><i class="fa fa-user"></i><br>Rekam Medis</button></a>
+                </td>
+                <td>
+                    <a href="/dokter/pemeriksaan_data/<%= index.id_pasien %>">
+                    <button class="btn btn-success"><i class="fa fa-stethoscope"></i><br>Pemeriksaan Medis</button></a>
+                </td>
+              </tr>
+              <% no++; }); %>
+            </tbody>
+        </table>
+      </div>
+  </div>

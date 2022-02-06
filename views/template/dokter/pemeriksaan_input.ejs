@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+            <div class="card-header">
+            <h3 class="card-title">Input Pemeriksaan</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form method="post" action="<%= data.length != 0 ? '/dokter/pemeriksaan_update': '/dokter/pemeriksaan_input' %>">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tinggi Badan :</label>
+                                <input type="text" class="form-control" name="tinggi_badan" maxlength="100" value="<%= data.length != 0 ? data.tiggi_badan : '' %>" placeholder="Tinggi Badan">
+                                <input type="hidden" class="form-control" name="id_pemeriksaan" maxlength="100" value="<%= data.length != 0 ? data.id_pemeriksaan : '' %>" placeholder="Id Pemeriksaan">
+                                <input type="hidden" class="form-control" name="id_catatan_medis" maxlength="100" value="<%= id_catatan_medis %>" placeholder="Id Catatan Medis">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Berat Badan :</label>
+                                <input type="text" class="form-control" maxlength="100" minlength="0" name="berat_badan" value="<%= data.length != 0 ? data.berat_badan : '' %>" placeholder="Berat Badan">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tekanan Darah :</label>
+                                <input type="text" class="form-control" maxlength="100" minlength="0" name="tekanan_darah" value="<%= data.length != 0 ? data.tekanan_darah : '' %>" placeholder="Tekanan Darah">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Kesimpulan :</label>
+                                <input type="text" class="form-control" maxlength="100" minlength="0" name="kesimpulan" value="<%= data.length != 0 ? data.kesimpulan : '' %>" placeholder="Kesimpulan">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tgl Pemeriksaan :</label>
+                                <input type="date" class="form-control" maxlength="100" minlength="0" name="tgl_pemeriksaan" value="<%= data.length != 0 ? data.tgl_pemeriksaan : '' %>" placeholder="tgl">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
